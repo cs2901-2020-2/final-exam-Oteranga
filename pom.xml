@@ -11,12 +11,12 @@
     <description>Final exam</description>
 
     <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <sonar.projectKey>cs2901-2020-2_final-exam-Oteranga</sonar.projectKey>
-    <sonar.organization>cs2901-2020-2</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonar.login>9b5972d900d84ba6a216680ab1d8a77cfb904fcf</sonar.login>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.projectKey>cs2901-2020-2_final-exam-Oteranga</sonar.projectKey>
+        <sonar.organization>cs2901-2020-2</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>9b5972d900d84ba6a216680ab1d8a77cfb904fcf</sonar.login>
     </properties>
 
     <dependencies>
@@ -41,9 +41,9 @@
             <version>2.13.3</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.4</version>
+            <groupId>junit</groupId>     <!-- NOT org.junit here -->
+            <artifactId>junit-dep</artifactId>
+            <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
