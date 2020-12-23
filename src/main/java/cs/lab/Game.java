@@ -14,6 +14,12 @@ public class Game {
     private Pieces pieces;
 
     public Game(){
+        resetTable();
+        pieces = new Pieces();
+        gameEngine();
+    }
+
+    public void resetTable(){
         for(int i = 0; i < 9; i++){
             List<String> temp = new ArrayList<String>();
             for(int j = 0; j < 9; j++){
@@ -21,8 +27,6 @@ public class Game {
             }
             table.add(temp);
         }
-        pieces = new Pieces();
-        gameEngine();
     }
 
     public void printMatrix(){
@@ -49,6 +53,7 @@ public class Game {
             }
             if(countY == 8 || countX == 8){
                 state = true;
+                resetTable();
                 points(0);
             }
         }

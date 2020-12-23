@@ -34,7 +34,7 @@ public class Pieces {
     }
 
     public List<List<String>> pieceA(List<List<String>> table, int posx, int posy){
-        if((8 - posx) <= 1 || (8 - posy) < 1){
+        if((8 - posy) <= 1 || (8 - posx) < 1){
             return table;
         }
         int countX = 0;
@@ -58,14 +58,64 @@ public class Pieces {
     }
 
     public List<List<String>> pieceB(List<List<String>> table, int posx, int posy){
+        if((8 - posx) <= 1 || (8 - posy) < 1){
+            return table;
+        }
+        int countX = 0;
+        int countY = 0;
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                if(posx == i && posy == j){
+                    table.get(i).set(j, "o");
+                }
+                else if(posy == j && posx > i && countY < 2 ){
+                    table.get(i).set(j, "o");
+                    countY++;
+                }
+                else if(posx == i && (posy == (j + 2) || posy == (j + 1)) && countX < 2){
+                    table.get(i).set(j, "o");
+                    countX++;
+                }
+            }
+        }
         return table;
     }
 
     public List<List<String>> pieceC(List<List<String>> table, int posx, int posy){
+        if((8 - posx) >= 7){
+            return table;
+        }
+        int countX = 0;
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                if(posx == i && posy == j){
+                    table.get(i).set(j, "o");
+                }
+                else if(posx == i && (posy == (j + 2) || posy == (j + 1)) && countX < 2 ){
+                    table.get(i).set(j, "o");
+                    countX++;
+                }
+            }
+        }
         return table;
     }
 
     public List<List<String>> pieceD(List<List<String>> table, int posx, int posy){
+        if((8 - posy) <= 1){
+            return table;
+        }
+        int countY = 0;
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                if(posx == i && posy == j){
+                    table.get(i).set(j, "o");
+                }
+                else if(posy == j && posx > i && countY < 2 ){
+                    table.get(i).set(j, "o");
+                    countY++;
+                }
+            }
+        }
         return table;
     }
 
